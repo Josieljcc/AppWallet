@@ -26,7 +26,7 @@ class WalletForm extends React.Component {
     const { expenses } = this.props;
     const { description, tag, method, currency, value } = this.state;
     const formatedExpense = {
-      id: expenses[0].id === '' ? 0 : expenses.length,
+      id: expenses[0].id === '' ? 0 : expenses[expenses.length - 1].id + 1,
       value,
       description,
       currency,

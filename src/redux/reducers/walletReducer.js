@@ -36,7 +36,15 @@ const walletReducer = (state = initialState, { type, payload }) => {
   case REMOVE_EXPENSE:
     return {
       ...state,
-      expenses: state.expenses.filter((expense) => expense.id !== payload),
+      expenses: state.expenses.length === 1 ? [{
+        id: '',
+        value: '',
+        currency: '',
+        method: '',
+        tag: '',
+        description: '',
+        exchangeRates: '',
+      }] : state.expenses.filter((expense) => expense.id !== payload),
     };
   default:
     return state;

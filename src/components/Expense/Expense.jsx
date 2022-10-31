@@ -52,7 +52,7 @@ class Expense extends React.Component {
 
 Expense.propTypes = {
   expense: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     description: PropTypes.string,
     method: PropTypes.string,
     tag: PropTypes.string,
