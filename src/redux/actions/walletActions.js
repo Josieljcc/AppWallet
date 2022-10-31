@@ -1,6 +1,7 @@
 // ./src/redux/actions/index.js
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
+export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const FAILED_REQUEST = 'FAILED_REQUEST';
 
@@ -25,6 +26,13 @@ function failedRequest(error) {
   return {
     type: FAILED_REQUEST,
     payload: error,
+  };
+}
+
+export function removeExpense(id) {
+  return {
+    type: REMOVE_EXPENSE,
+    payload: id,
   };
 }
 

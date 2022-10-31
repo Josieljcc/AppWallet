@@ -5,52 +5,51 @@
   margin-top: 30vh;
 }
 
-table.darkTable {
+table .darkTable {
   border-collapse: collapse;
   height: 5vw;
   text-align: center;
   width: 90%;
 }
 
-table.darkTable td,
-table.darkTable th {
+table .darkTable td , table .darkTable th {
   padding: 3px 2px;
 }
 
-table.darkTable tbody td {
+table .darkTable tbody td {
   color: #e6e6e6;
   font-size: 13px;
 }
 
-table.darkTable tr {
-  color: #2fc18c;
+table .darkTable tr {
   border-bottom: #2fc18c solid 2px;
+  color: #2fc18c;
   font-weight: 700;
   height: 3em;
 }
 
-table.darkTable tr:nth-child(1) {
+table .darkTable tr:nth-child( 1 ) {
   border-bottom: #c5c5c5 solid 2px;
 }
 
-table.darkTable thead {
+table .darkTable thead {
   background: #353535;
 }
 
-table.darkTable thead th {
-  color: #e6e6e6;
+table .darkTable thead th {
   border-left: 1px solid #4a4a4a;
+  color: #e6e6e6;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
   height: 3em;
   text-align: center;
 }
 
-table.darkTable thead th:first-child {
+table .darkTable thead th:first-child {
   border-left: none;
 }
 
-table.darkTable tfoot td {
+table .darkTable tfoot td {
   font-size: 12px;
 }
 

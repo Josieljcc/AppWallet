@@ -1,5 +1,6 @@
 import { REQUEST_CURRENCIES,
-  GET_CURRENCIES, FAILED_REQUEST, SAVE_EXPENSE } from '../actions/walletActions';
+  GET_CURRENCIES, FAILED_REQUEST,
+  SAVE_EXPENSE, REMOVE_EXPENSE } from '../actions/walletActions';
 
 const initialState = {
   currencies: [],
@@ -32,6 +33,11 @@ const walletReducer = (state = initialState, { type, payload }) => {
     return { ...state,
       expenses: state.expenses[0].id === ''
         ? [payload] : [...state.expenses, payload] };
+  case REMOVE_EXPENSE:
+    return {
+      ...state,
+      expenses: state.expenses.filter((expense) => expense.id !== payload),
+    };
   default:
     return state;
   }

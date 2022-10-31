@@ -5,15 +5,15 @@
 }
 
 .form-content .select {
-  color: #c1c1c1;
-  background: #696969;
+  background: dimgrey;
   border-radius: 5px;
+  color: #c1c1c1;
   height: 1.8rem;
 }
 
 .form-content .row {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   gap: 1rem;
+  justify-content: space-between;
 }

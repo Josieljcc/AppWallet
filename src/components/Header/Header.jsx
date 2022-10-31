@@ -26,11 +26,11 @@ class Header extends React.Component {
           <p>
             Total de despesas:
             {' '}
-            <p
+            <span
               data-testid="total-field"
             >
               { expenses[0].id === '' ? 0 : this.calculateTotal()}
-            </p>
+            </span>
             {' '}
             <span data-testid="header-currency-field">BRL</span>
           </p>

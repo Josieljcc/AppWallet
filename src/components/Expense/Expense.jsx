@@ -1,15 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import edit from '../../img/edit.png';
 import remove from '../../img/remove.png';
+import './expense.css';
+import { removeExpense } from '../../redux/actions/walletActions';
 
 class Expense extends React.Component {
+  handleRemove = () => {
+    const { dispatch, expense: { id } } = this.props;
+    dispatch(removeExpense(id));
+  };
+
   render() {
     const { expense:
         { description, method, tag, value, currency, exchangeRates } } = this.props;
     const { name, ask } = exchangeRates[currency];
     return (
-      <tr>
+      <tr className="expense">
         <td>{ description }</td>
         <td>{ tag }</td>
         <td>{ method }</td>
@@ -19,8 +27,23 @@ class Expense extends React.Component {
         <td>{ parseFloat(value * ask).toFixed(2) }</td>
         <td>Real</td>
         <td className="icons">
-          <img src={ edit } alt="edit icon" />
-          <img src={ remove } alt="remove icon" />
+          <button
+            type="button"
+            data-testid="edit-btn"
+            onClick={ this.handleRemove }
+          >
+            <img src={ edit } alt="edit icon" />
+          </button>
+          <button
+            type="button"
+            data-testid="delete-btn"
+            onClick={ this.handleRemove }
+          >
+            <img
+              src={ remove }
+              alt="remove icon"
+            />
+          </button>
         </td>
       </tr>
     );
@@ -29,6 +52,7 @@ class Expense extends React.Component {
 
 Expense.propTypes = {
   expense: PropTypes.shape({
+    id: PropTypes.string,
     description: PropTypes.string,
     method: PropTypes.string,
     tag: PropTypes.string,
@@ -36,6 +60,7 @@ Expense.propTypes = {
     currency: PropTypes.string,
     exchangeRates: PropTypes.shape([]),
   }).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default Expense;
+export default connect()(Expense);
