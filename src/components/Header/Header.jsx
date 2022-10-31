@@ -23,10 +23,14 @@ class Header extends React.Component {
         <img src={ logo } alt="logo" />
         <div className="expense">
           <img src={ coin } alt="coin icon" />
-          <p data-testid="total-field">
+          <p>
             Total de despesas:
             {' '}
-            { expenses[0].id === '' ? 0 : this.calculateTotal()}
+            <p
+              data-testid="total-field"
+            >
+              { expenses[0].id === '' ? 0 : this.calculateTotal()}
+            </p>
             {' '}
             <span data-testid="header-currency-field">BRL</span>
           </p>

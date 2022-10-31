@@ -52,7 +52,7 @@ class WalletForm extends React.Component {
       tag: 'Alimentação',
       method: 'Dinheiro',
       currency: 'USD',
-      value: 0,
+      value: '',
     });
   };
 
@@ -126,7 +126,7 @@ class WalletForm extends React.Component {
             handleClick={ this.handleClick }
             isDisabled={ false }
           >
-            Adcionar Despesas
+            Adicionar Despesa
 
           </Button>
         </div>
