@@ -101,6 +101,7 @@ class WalletForm extends React.Component {
               <MethodSelect handleInput={ this.handleInput } method={ method } />
               <p>Moeda</p>
               <select
+                data-testid="currency-input"
                 value={ currency }
                 name="currency"
                 onChange={ this.handleInput }
