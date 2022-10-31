@@ -1,0 +1,19 @@
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-content .select {
+  color: #c1c1c1;
+  background: #696969;
+  border-radius: 5px;
+  height: 1.8rem;
+}
+
+.form-content .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}

@@ -1,3 +1,54 @@
-.wallet {
+.main {
   display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #027e50de;
+}
+
+.main .add {
+  width: 70%;
+  height: 44vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 10px 10px;
+  background: #696969;
+  justify-content: space-evenly;
+  color: #c1c1c1;
+  box-shadow: -4px 9px 13px rgba(3, 10, 31, 0.541);
+  font-weight: 700;
+  z-index: 3;
+}
+
+.main .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #353535;
+  height: 40%;
+  z-index: 2;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.main .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5vh;
+}
+
+.main .button {
+  width: 12vw;
+  font-size: 1vw;
+}
+
+.main .main-content {
+  background-color: #353535;
+  position: absolute;
+  width: 90%;
+  margin-top: 17.53vh;
+  padding-bottom: 3em;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 10, 31, 0.541);
 }

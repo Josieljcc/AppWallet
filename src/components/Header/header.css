@@ -1,0 +1,22 @@
+.header {
+  align-items: center;
+  color: #c1c1c1;
+  display: flex;
+  font-weight: 700;
+  height: 12.3vh;
+  justify-content: space-around;
+}
+
+.header .user {
+  align-items: center;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-around;
+}
+
+.header .expense {
+  align-items: center;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-around;
+}

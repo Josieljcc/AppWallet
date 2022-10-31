@@ -1,34 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Header from '../../components/Header/Header';
+import bg from '../../img/login.png';
+import './wallet.css';
+import WalletForm from '../../components/WalletForm/WalletForm';
+import Table from '../../components/Table/Table';
 
-class Inputs extends React.Component {
+class Wallet extends React.Component {
   render() {
-    const { children, type, name, value, handleInput, dataTestId } = this.props;
     return (
-      <input
-        className="inputs"
-        data-testid={ dataTestId }
-        type={ type }
-        placeholder={ children }
-        name={ name }
-        value={ value }
-        onChange={ handleInput }
-      />
+      <div className="main">
+        <img className="bg-png" src={ bg } alt="background" />
+        <div className="add">
+          <Header />
+          <WalletForm />
+        </div>
+        <div className="main-content">
+          <div className="expense-table">
+            <Table />
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-Inputs.defaultProps = {
-  children: '',
-};
-
-Inputs.propTypes = {
-  children: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  handleInput: PropTypes.func.isRequired,
-  dataTestId: PropTypes.string.isRequired,
-};
-
-export default Inputs;
+export default Wallet;
