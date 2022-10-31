@@ -1,0 +1,16 @@
+.inputs {
+  background-color: dimgrey;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 1.8rem;
+  padding-inline: 0.5rem;
+}
+
+.inputs :focus {
+  border: #c1c1c1 solid 1px;
+}
+
+::placeholder {
+  color: #c1c1c1;
+}

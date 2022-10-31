@@ -1,0 +1,21 @@
+.button {
+  background-color: #11a871;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 2.2rem;
+  transition: color 0.3s;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #09b475;
+}
+
+.button:disabled {
+  cursor: initial;
+  filter: grayscale(100%);
+}
