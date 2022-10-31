@@ -1,15 +1,15 @@
 .table-container {
+  color: #c1c1c1;
   display: flex;
   justify-content: center;
-  color: #c1c1c1;
   margin-top: 30vh;
 }
 
 table.darkTable {
-  width: 90%;
+  border-collapse: collapse;
   height: 5vw;
   text-align: center;
-  border-collapse: collapse;
+  width: 90%;
 }
 
 table.darkTable td,
@@ -18,14 +18,14 @@ table.darkTable th {
 }
 
 table.darkTable tbody td {
-  font-size: 13px;
   color: #e6e6e6;
+  font-size: 13px;
 }
 
 table.darkTable tr {
   color: #2fc18c;
-  font-weight: 700;
   border-bottom: #2fc18c solid 2px;
+  font-weight: 700;
   height: 3em;
 }
 
@@ -38,12 +38,12 @@ table.darkTable thead {
 }
 
 table.darkTable thead th {
+  color: #e6e6e6;
+  border-left: 1px solid #4a4a4a;
   font-size: 15px;
   font-weight: bold;
-  color: #e6e6e6;
-  text-align: center;
-  border-left: 1px solid #4a4a4a;
   height: 3em;
+  text-align: center;
 }
 
 table.darkTable thead th:first-child {
