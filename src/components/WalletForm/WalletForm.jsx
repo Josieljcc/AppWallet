@@ -111,13 +111,13 @@ class WalletForm extends React.Component {
             </div>
             <div className="row">
               <p>Valor</p>
-              <Inputs
+              <input
                 id="price"
-                dataTestId="value-input"
+                data-testid="value-input"
                 name="value"
                 type="number"
                 value={ value }
-                handleInput={ this.handleInput }
+                onChange={ this.handleInput }
               />
               <p>Método de pagamento</p>
               <MethodSelect handleInput={ this.handleInput } method={ method } />
