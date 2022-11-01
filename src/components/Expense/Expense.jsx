@@ -4,12 +4,17 @@ import PropTypes from 'prop-types';
 import edit from '../../img/edit.png';
 import remove from '../../img/remove.png';
 import './expense.css';
-import { removeExpense } from '../../redux/actions/walletActions';
+import { removeExpense, showEditor } from '../../redux/actions/walletActions';
 
 class Expense extends React.Component {
   handleRemove = () => {
     const { dispatch, expense: { id } } = this.props;
     dispatch(removeExpense(id));
+  };
+
+  handleEdit = () => {
+    const { dispatch, expense: { id } } = this.props;
+    dispatch(showEditor(id));
   };
 
   render() {
@@ -30,7 +35,7 @@ class Expense extends React.Component {
           <button
             type="button"
             data-testid="edit-btn"
-            onClick={ this.handleRemove }
+            onClick={ this.handleEdit }
           >
             <img src={ edit } alt="edit icon" />
           </button>
@@ -50,6 +55,11 @@ class Expense extends React.Component {
   }
 }
 
+const mapStateToProps = ({ state: idToEdit, editor }) => ({
+  idToEdit,
+  editor,
+});
+
 Expense.propTypes = {
   expense: PropTypes.shape({
     id: PropTypes.number,
@@ -63,4 +73,4 @@ Expense.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-export default connect()(Expense);
+export default connect(mapStateToProps)(Expense);

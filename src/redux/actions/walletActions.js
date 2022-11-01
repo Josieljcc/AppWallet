@@ -1,7 +1,9 @@
 // ./src/redux/actions/index.js
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+export const SHOW_EDITOR = 'SHOW_EDITOR';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const FAILED_REQUEST = 'FAILED_REQUEST';
 
@@ -33,6 +35,20 @@ export function removeExpense(id) {
   return {
     type: REMOVE_EXPENSE,
     payload: id,
+  };
+}
+
+export function showEditor(id) {
+  return {
+    type: SHOW_EDITOR,
+    payload: id,
+  };
+}
+
+export function editExpense(expense) {
+  return {
+    type: EDIT_EXPENSE,
+    payload: expense,
   };
 }
 
