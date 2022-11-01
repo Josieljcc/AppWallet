@@ -1,5 +1,5 @@
 import { REQUEST_CURRENCIES,
-  GET_CURRENCIES, FAILED_REQUEST,
+  GET_CURRENCIES,
   SAVE_EXPENSE, REMOVE_EXPENSE,
   SHOW_EDITOR, EDIT_EXPENSE } from '../actions/walletActions';
 
@@ -28,8 +28,6 @@ const walletReducer = (state = initialState, { type, payload }) => {
       currencies: Object.keys(payload)
         .filter((currency) => currency !== 'USDT'),
       isFetching: false };
-  case FAILED_REQUEST:
-    return { ...state, error: payload, isFetching: false };
   case SAVE_EXPENSE:
     return { ...state,
       expenses: state.expenses[0].id === ''

@@ -22,21 +22,25 @@ describe('testes do componente WalletForm', () => {
     const addButton = screen.getByRole('button', { name: /adicionar despesa/i });
     expect(addButton).toBeInTheDocument();
   });
-  test('se ao adicionar uma despesa ela vai corretamente para o estado global', () => {
-    const { store } = renderWithRouterAndRedux(
+  test('se ao adicionar uma despesa ela vai corretamente para o estado global', async () => {
+    renderWithRouterAndRedux(
       <Wallet />,
     );
     const description = screen.getByPlaceholderText(/despesa/i);
     userEvent.type(description, 'teste');
+    const value = screen.getByDisplayValue('0');
+    userEvent.type(value, '10');
     const button = screen.getByRole('button', { name: /adicionar despesa/i });
     userEvent.click(button);
-    // const value = screen.getByDisplayValue('0');
     // userEvent.type(description, 'teste');
-    // userEvent.type(value, 10);
     // expect(value).toHaveValue(10);
     // const addButton = screen.getByRole('button', { name: /adicionar despesa/i });
     // userEvent.click(addButton);
-    console.log(store.getState().wallet.expenses);
-    // expect(store).toBe('teste1');
+    // const beforeStore = await store.getState();
+    // console.log(beforeStore.wallet.expenses);
+    const descriptionText = await screen.findByText('teste');
+    const valueText = await screen.findByText('10.00');
+    expect(descriptionText).toBeInTheDocument();
+    expect(valueText).toBeInTheDocument();
   });
 });

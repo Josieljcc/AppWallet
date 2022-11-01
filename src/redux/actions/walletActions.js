@@ -24,13 +24,6 @@ function requestCurrency() {
   return { type: REQUEST_CURRENCIES };
 }
 
-function failedRequest(error) {
-  return {
-    type: FAILED_REQUEST,
-    payload: error,
-  };
-}
-
 export function removeExpense(id) {
   return {
     type: REMOVE_EXPENSE,
@@ -57,7 +50,6 @@ export function fetchCurrencies() {
     dispatch(requestCurrency());
     return fetch('https://economia.awesomeapi.com.br/json/all')
       .then((response) => response.json())
-      .then((json) => dispatch(getCurrencies(json)))
-      .catch((error) => dispatch(failedRequest(error)));
+      .then((json) => dispatch(getCurrencies(json)));
   };
 }

@@ -112,6 +112,7 @@ class WalletForm extends React.Component {
             <div className="row">
               <p>Valor</p>
               <input
+                className="inputs"
                 id="price"
                 data-testid="value-input"
                 name="value"
@@ -167,8 +168,8 @@ WalletForm.propTypes = {
   editor: PropTypes.bool.isRequired,
   idToEdit: PropTypes.number.isRequired,
   dispatch: PropTypes.func.isRequired,
-  currencies: PropTypes.shape([]).isRequired,
-  expenses: PropTypes.shape([]).isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.string).isRequired,
   children: PropTypes.string.isRequired,
 };
 
